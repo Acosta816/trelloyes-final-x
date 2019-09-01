@@ -11,7 +11,7 @@ class List extends React.Component {
     const cards = this.props.cards.map((card,index)=> {
       return(
         <li key={index}>
-          <Card title={card.title} content={card.content} />
+          <Card title={card.title} content={card.content} deleteCard={this.props.deleteCard} crd={card} />
         </li>
       )
     });
@@ -20,11 +20,13 @@ class List extends React.Component {
     return(
 
       <section className='List'>
+
         <header className="List-header">
         {this.props.header}
         </header>
 
         <div className='List-cards'>
+          <button onClick={()=>this.props.addCard(this.props.listId)}>+Add Card</button>
           <ul>
             {cards}
           </ul>

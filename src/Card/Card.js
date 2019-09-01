@@ -8,9 +8,10 @@ function Card(props){
     <div className="Card">
       <h3>{props.title}</h3>
       <p>{props.content}</p>
+      <button onClick={()=>props.deleteCard(props.crd)}>-delete</button>
     </div>
   )
 }
-
+ 
 
 export default Card;
